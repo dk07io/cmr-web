@@ -1,15 +1,14 @@
 class Rolodex
   attr_reader :contacts
-  # @@ids = 1001
 
   def initialize
     @contacts = []
-    @ids = 1000
+    @id = 1000
   end
+
   def add_contact(contact)
-    contact.id = @@ids
+    contact.id = @id
     @contacts << contact
-    @@ids += 1
-    contact
+    @id += 1
   end
-end 
+end
