@@ -1,8 +1,29 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
 body {
   background-color: #ececec;
 }
 
 header {
-  color: #b0b0b0;
+  font-family: Helvetica, sans-serif;
+  color: #575757;
 }
 
+li {
+  /*line-height:1.5em;*/
+  display:inline-block;
+  float:left;
+  margin-right: 10px;
+  padding:10px;
+  border: solid;
+  border-color: #575757;
+  width:30%;
+}
+
+footer {
+  clear:both;
+  margin-bottom: 0;
+}
