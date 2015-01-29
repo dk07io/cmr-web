@@ -9,6 +9,7 @@ body {
 
 header {
   font-family: Helvetica, sans-serif;
+  font-style: ;
   color: #575757;
 }
 
@@ -17,7 +18,7 @@ li {
   display:inline-block;
   float:left;
   margin-right: 10px;
-  padding:10px;
+  padding: 10px;
   border: solid;
   border-color: #575757;
   width:30%;
