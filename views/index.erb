@@ -6,6 +6,18 @@
   <nav>
     <li><a href="/contacts">View all Contacts</a></li>
     <li><a href="/contacts/new">Add a Contact</a></li>
-    <li><a href="/contacts/modify">Modify a Contact</a></li>
+    <li><a href="/contacts/:id/edit">Modify a Contact</a></li>
+    
+
   </nav>
     
+def print_main_menu
+puts "[1] Add a contact"
+puts "[2] Modify contact"
+puts "[3] Display all contact"
+puts "[4] Display contact"
+puts "[5] Dispaly an attribute"
+puts "[6] Delete a contact"
+puts "[7] Exit"
+puts "Enter 'Add', 'Modify', 'Display All', 'Display contact:', 'Display Attribute', 'Delete', or 'Exit':"
+end
