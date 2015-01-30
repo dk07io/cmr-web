@@ -6,10 +6,12 @@ require 'data_mapper'
 DataMapper.setup(:default, "sqlite3:database.sqlite3")
 
 $rolodex = Rolodex.new
-# @@rolodex = Rolodex.new
+$rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
+$rolodex.add_contact(Contact.new("Daniel", "Kim", "daniel@bitmakerlabs.com", "Rockstar"))
 
-# @@rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
-# @@rolodex.add_contact(Contact.new("Daniel", "Kim", "daniel@bitmakerlabs.com", "Rockstar"))
+before do
+  p params
+end
 
 get '/' do
   @crm_app_name = "My CRM"
