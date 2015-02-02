@@ -1,5 +1,5 @@
 # require_relative 'contact'
-require_relative 'rolodex'
+# require_relative 'rolodex'
 require 'sinatra'
 require 'data_mapper'
 
@@ -18,7 +18,7 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
-$rolodex = Rolodex.new
+# $rolodex = Rolodex.new
 # $rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
 # $rolodex.add_contact(Contact.new("Daniel", "Kim", "daniel@bitmakerlabs.com", "Rockstar"))
 
@@ -69,22 +69,22 @@ post "/contacts" do
   redirect to('/contacts')
 end
 
-# put "/contacts/:id" do
-#   @contact = $rolodex.find(params[:id].to_i)
-#   if @contact
-#     @contact.first_name = params[:first_name]
-#     @contact.last_name = params[:last_name]
-#     @contact.email = params[:email]
-#     @contact.note = params[:note]
+put "/contacts/:id" do
+  @contact = Contact.get(params[:id].to_i)
+  if @contact
+    @contact.first_name = params[:first_name]
+    @contact.last_name = params[:last_name]
+    @contact.email = params[:email]
+    @contact.note = params[:note]
 
-#     redirect to("/contacts")
-#   else
-#     raise Sinatra::NotFound
-#   end
-# end
+    redirect to("/contacts")
+  else
+    raise Sinatra::NotFound
+  end
+end
 
 get "/contacts/:id/edit" do
-  @contact = $rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i)
   if @contact
     erb :edit_contact
   else

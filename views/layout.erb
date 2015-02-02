@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <%= yield %>
-<footer>Jooter &copy; 2015</footer>
+  <div id = "wrapper">
+    <div id = "header"></div>
+    <div id = "content"><%= yield %></div>
+    <div id = "footer">Jooter &copy; 2015</div>
+  </div>
 </body>
 </html>
-    
